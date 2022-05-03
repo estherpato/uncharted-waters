@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@1&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Uncharted Waters</title>
+</head>
+
+<body>
+    <header>
+        <h1>~ Uncharted Waters ~</h1>
+    </header>
+    <main>
+        <form id="form" class="input-wrapper">
+            <label for="city">
+                <select id="city" name="city">
+                    <option hidden selected>City</option>
+                    <option>Aden</option>
+                    <option>Alexandria</option>
+                    <option>Amsterdam</option>
+                    <option>Athens</option>
+                    <option>Basrah</option>
+                    <option>Boston</option>
+                    <option>Brunei</option>
+                    <option>Buenos Aires</option>
+                    <option>Calicut</option>
+                    <option>Cape Town</option>
+                    <option>Cayenne</option>
+                    <option>Ceylon</option>
+                    <option>Copenhagen</option>
+                    <option>Darwin</option>
+                    <option>Edo</option>
+                    <option>Hamburg</option>
+                    <option>Hangzhou</option>
+                    <option>Istambul</option>
+                    <option>Jamaica</option>
+                    <option>Kolkata</option>
+                    <option>Las Palmas</option>
+                    <option>Lisbon</option>
+                    <option>London</option>
+                    <option>Luanda</option>
+                    <option>Malacca</option>
+                    <option>Manila</option>
+                    <option>Marseille</option>
+                    <option>Mozambique</option>
+                    <option>Nantes</option>
+                    <option>Nassau</option>
+                    <option>Panama City</option>
+                    <option>Pinjarra</option>
+                    <option>Quanzhou</option>
+                    <option>Rio de Janeiro</option>
+                    <option>Santo Domingo</option>
+                    <option>Seville</option>
+                    <option>St. George's</option>
+                    <option>Stockholm</option>
+                    <option>Tunis</option>
+                    <option>Venice</option>
+                </select>
+            </label>
+            <label for="product">
+                <select name="product" id="product">
+                    <option hidden selected>Product</option>
+                    <option>Agate</option>
+                    <option>Alcohol</option>
+                    <option>Bananas</option>
+                    <option>Carpets</option>
+                    <option>Cloth</option>
+                    <option>Diamonds</option>
+                    <option>Dye</option>
+                    <option>Firearms</option>
+                    <option>Fish</option>
+                    <option>Gold</option>
+                    <option>Leather</option>
+                    <option>Meat</option>
+                    <option>Medicine</option>
+                    <option>Paper</option>
+                    <option>Peanuts</option>
+                    <option>Pearls</option>
+                    <option>Porcelain</option>
+                    <option>Tea Leaves</option>
+                    <option>Tin</option>
+                    <option>Tobacco</option>
+                </select>
+            </label>
+            <label for="percentage">
+                <select id="percentage" name="percentage">
+                    <option hidden selected>%</option>
+                    <option>105</option>
+                    <option>106</option>
+                    <option>107</option>
+                    <option>108</option>
+                    <option>109</option>
+                    <option>110</option>
+                </select>
+            </label>
+            <button id="submit">Submit</button>
+        </form>
+        <button id="filter">Filter</button>
+        <ul id="unsorted-entries"></ul>
+        <div class="table">
+            <div class="grid">
+                <span class="table-header">Product</span>
+                <span class="table-header">City</span>
+                <span class="table-header">%</span>
+            </div>
+            <div id="results-table"></div>
+        </div>
+    </main>
+    <footer>Made with &#10084; by Halsey for Throne of Glass Alliance</footer>
+    <script src="./main.js"></script>
+</body>
+
+</html>
