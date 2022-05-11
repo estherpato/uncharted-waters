@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@1&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@1&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Uncharted Waters</title>
 </head>
@@ -18,7 +19,7 @@
     </header>
     <main>
         <form id="form" class="input-wrapper">
-            <label for="city">
+            <label class="label-select" for="city">
                 <select id="city" name="city">
                     <option hidden selected>City</option>
                     <option>Aden</option>
@@ -63,7 +64,7 @@
                     <option>Venice</option>
                 </select>
             </label>
-            <label for="product">
+            <label class="label-select" for="product">
                 <select name="product" id="product">
                     <option hidden selected>Product</option>
                     <option>Agate</option>
@@ -88,7 +89,7 @@
                     <option>Tobacco</option>
                 </select>
             </label>
-            <label for="percentage">
+            <label class="label-select" for="percentage">
                 <select id="percentage" name="percentage">
                     <option hidden selected>%</option>
                     <option>105</option>
@@ -101,16 +102,82 @@
             </label>
             <button id="submit">Submit</button>
         </form>
-        <button id="filter">Filter</button>
+
+        <button class="btn-filter" id="filter">Get best places</button>
+        <button class="btn-filter" disabled>Get visited cities</button>
+        <button class="btn-filter" disabled>Get expanded list</button>
+
         <ul id="unsorted-entries"></ul>
-        <div class="table">
-            <div class="grid">
-                <span class="table-header">Product</span>
-                <span class="table-header">City</span>
-                <span class="table-header">%</span>
+
+        <section class="all-results">
+            <div class="result -first">
+                <h2>Best place to sell</h2>
+                <div class="best-place">
+                    <div class="grid">
+                        <span class="table-header">Product</span>
+                        <span class="table-header">City</span>
+                        <span class="table-header">%</span>
+                    </div>
+                    <div id="results-table"></div>
+                </div>
             </div>
-            <div id="results-table"></div>
-        </div>
+            <div class="result -second">
+                <h2>Visited cities</h2>
+                <div class="cities">
+                    <label><input type="checkbox">Aden</label>
+                    <label><input type="checkbox">Alexandria</label>
+                    <label><input type="checkbox">Amsterdam</label>
+                    <label><input type="checkbox">Athens</label>
+                    <label><input type="checkbox">Basrah</label>
+                    <label><input type="checkbox">Boston</label>
+                    <label><input type="checkbox">Brunei</label>
+                    <label><input type="checkbox">Buenos Aires</label>
+                    <label><input type="checkbox">Calicut</label>
+                    <label><input type="checkbox">Cape Town</label>
+                    <label><input type="checkbox">Cayenne</label>
+                    <label><input type="checkbox">Ceylon</label>
+                    <label><input type="checkbox">Copenhagen</label>
+                    <label><input type="checkbox">Darwin</label>
+                    <label><input type="checkbox">Edo</label>
+                    <label><input type="checkbox">Hamburg</label>
+                    <label><input type="checkbox">Hangzhou</label>
+                    <label><input type="checkbox">Istambul</label>
+                    <label><input type="checkbox">Jamaica</label>
+                    <label><input type="checkbox">Kolkata</label>
+                    <label><input type="checkbox">Las Palmas</label>
+                    <label><input type="checkbox">Lisbon</label>
+                    <label><input type="checkbox">London</label>
+                    <label><input type="checkbox">Luanda</label>
+                    <label><input type="checkbox">Malacca</label>
+                    <label><input type="checkbox">Manila</label>
+                    <label><input type="checkbox">Marseille</label>
+                    <label><input type="checkbox">Mozambique</label>
+                    <label><input type="checkbox">Nantes</label>
+                    <label><input type="checkbox">Nassau</label>
+                    <label><input type="checkbox">Panama City</label>
+                    <label><input type="checkbox">Pinjarra</label>
+                    <label><input type="checkbox">Quanzhou</label>
+                    <label><input type="checkbox">Rio de Janeiro</label>
+                    <label><input type="checkbox">Santo Domingo</label>
+                    <label><input type="checkbox">Seville</label>
+                    <label><input type="checkbox">St. George's</label>
+                    <label><input type="checkbox">Stockholm</label>
+                    <label><input type="checkbox">Tunis</label>
+                    <label><input type="checkbox">Venice</label>
+                </div>
+            </div>
+            <div class="result -third">
+                <h2>Resume</h2>
+                <div class="resume">
+                    <div class="grid">
+                        <span class="table-header">City</span>
+                        <span class="table-header">Product</span>
+                        <span class="table-header">%</span>
+                    </div>
+                    <div id="results-table"></div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>Made with &#10084; by Halsey for Throne of Glass Alliance</footer>
     <script src="./main.js"></script>

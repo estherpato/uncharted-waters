@@ -45,7 +45,6 @@ function sortList() {
     paintResults();
 }
 
-
 function filter() {
     finalList = [];
     resultsTable.innerHTML = '';
