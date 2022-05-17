@@ -6,6 +6,7 @@ const inputProduct = document.getElementById('product');
 const inputPercentage = document.getElementById('percentage');
 const submitButton = document.getElementById('submit');
 const filterButton = document.getElementById('filter');
+const citiesButton = document.getElementById('btn-cities');
 const unsortedEntriesList = document.getElementById('unsorted-entries');
 const resultsTable = document.getElementById('results-table');
 let unfilteredList = [];
@@ -65,5 +66,16 @@ function filter() {
     sortList();
 }
 
+function getVisitedCities() {
+    const checkCities = document.querySelectorAll('.city-checkbox');
+    for(let i = 0; i < checkCities.length; i++) {
+        const cityInList = unfilteredList.find(item => checkCities[i].nextSibling.data === item.city);
+        if(cityInList) {
+            checkCities[i].checked = true;
+        }
+    }
+}
+
 submitButton.addEventListener('click', collectItem);
-filterButton.addEventListener('click', filter)
+filterButton.addEventListener('click', filter);
+citiesButton.addEventListener('click', getVisitedCities);
