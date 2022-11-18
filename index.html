@@ -11,6 +11,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Uncharted Waters</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 
 <body>
@@ -103,9 +104,7 @@
             <button id="submit">Submit</button>
         </form>
 
-        <button class="btn-filter" id="filter">Get best places</button>
-        <button class="btn-filter" id="btn-cities">Get visited cities</button>
-        <button class="btn-filter" disabled>Get expanded list</button>
+        <button class="btn-filter" id="report-btn">Generate report!</button>
 
         <ul id="unsorted-entries"></ul>
 
@@ -163,7 +162,7 @@
                     <label><input class="city-checkbox" type="checkbox">St. George's</label>
                     <label><input class="city-checkbox" type="checkbox">Stockholm</label>
                     <label><input class="city-checkbox" type="checkbox">Tunis</label>
-                    <label><input class="city-checkbox" type="checkbox">Venice</label>
+                    <label class="-last"><input class="city-checkbox" type="checkbox">Venice</label>
                 </div>
             </div>
             <div class="result -third">
@@ -174,12 +173,12 @@
                         <span class="table-header">Product</span>
                         <span class="table-header">%</span>
                     </div>
-                    <div id="results-table"></div>
+                    <div id="resume-table"></div>
                 </div>
             </div>
         </section>
     </main>
-    <footer>Made with &#10084; by Halsey for Throne of Glass Alliance</footer>
+    <footer>Made with &#10084; by Halsey/Ishtar for Throne of Glass Alliance & Gryffindor Alliance</footer>
     <script src="./main.js"></script>
 </body>
 

@@ -5,12 +5,18 @@ const inputCity = document.getElementById('city');
 const inputProduct = document.getElementById('product');
 const inputPercentage = document.getElementById('percentage');
 const submitButton = document.getElementById('submit');
+
 const filterButton = document.getElementById('filter');
 const citiesButton = document.getElementById('btn-cities');
+const resumeButton = document.getElementById('btn-resume');
+const reportButton = document.getElementById('report-btn');
+
 const unsortedEntriesList = document.getElementById('unsorted-entries');
 const resultsTable = document.getElementById('results-table');
+const resumeTable = document.getElementById('resume-table');
 let unfilteredList = [];
 let finalList = [];
+let resumeList = [];
 
 function paintEntry(entry) {
     unsortedEntriesList.innerHTML = unsortedEntriesList.innerHTML + `<li>${entry.city} | ${entry.product} | ${entry.percentage}%</li>`
@@ -23,16 +29,19 @@ function collectItem(event) {
         product: inputProduct.value,
         percentage: inputPercentage.value
     };
-    unfilteredList.push(entry);
-    paintEntry(entry);
+    const isRepeated = unfilteredList.find(item => item.city === entry.city && item.product === entry.product && item.percentage === entry.percentage);
+    if (!isRepeated) {
+        unfilteredList.push(entry);
+        paintEntry(entry);
+    }
     formulary.reset();
 }
 
 function paintResults() {
-    for(let i = 0; i < finalList.length; i++) {
+    for (let i = 0; i < finalList.length; i++) {
         resultsTable.innerHTML = resultsTable.innerHTML +
-        `
-        <div class="grid">
+            `
+        <div class="grid ${Number(finalList[i].percentage) === 110 ? '-highlight' : ''}">
             <span>${finalList[i].product}</span>
             <span>${finalList[i].city}</span>
             <span>${finalList[i].percentage}</span>
@@ -68,14 +77,35 @@ function filter() {
 
 function getVisitedCities() {
     const checkCities = document.querySelectorAll('.city-checkbox');
-    for(let i = 0; i < checkCities.length; i++) {
+    for (let i = 0; i < checkCities.length; i++) {
         const cityInList = unfilteredList.find(item => checkCities[i].nextSibling.data === item.city);
-        if(cityInList) {
+        if (cityInList) {
             checkCities[i].checked = true;
         }
     }
 }
 
+function getResume() {
+    resumeList = [];
+    resumeTable.innerHTML = '';
+    resumeList = unfilteredList.sort((a, b) => a.city.localeCompare(b.city) || b.percentage > a.percentage);
+    for (let i = 0; i < resumeList.length; i++) {
+        resumeTable.innerHTML = resumeTable.innerHTML +
+            `
+        <div class="grid">
+            <span>${resumeList[i].city}</span>
+            <span>${resumeList[i].product}</span>
+            <span>${resumeList[i].percentage}</span>
+        </div>
+        `
+    }
+}
+
+function handleReportClick() {
+    filter();
+    getVisitedCities();
+    getResume();
+}
+
 submitButton.addEventListener('click', collectItem);
-filterButton.addEventListener('click', filter);
-citiesButton.addEventListener('click', getVisitedCities);
+reportButton.addEventListener('click', handleReportClick)
